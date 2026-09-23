@@ -118,6 +118,11 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var a=localStorage.getItem("clinexus-dashboard-appearance");if(a==="dark"||(!a&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dashboard-dark")}catch(e){}`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>

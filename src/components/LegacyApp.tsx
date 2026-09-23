@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { ClientOnly } from "@tanstack/react-router";
+import { PageSkeleton } from "@/components/PageSkeleton";
 
 const LegacyApp = lazy(() => import("@/App"));
 
@@ -8,8 +9,8 @@ const LegacyApp = lazy(() => import("@/App"));
 export function LegacyAppHost() {
   useEffect(() => { console.log("MOUNT LegacyAppHost", performance.now()); return () => console.log("UNMOUNT LegacyAppHost", performance.now()); }, []);
   return (
-    <ClientOnly fallback={null}>
-      <Suspense fallback={null}>
+    <ClientOnly fallback={<PageSkeleton />}>
+      <Suspense fallback={<PageSkeleton />}>
         <LegacyApp />
       </Suspense>
     </ClientOnly>

@@ -872,3 +872,21 @@
   background-color: hsl(172 84% 39%);
   color: hsl(197 43% 6%);
 }
+
+/* ── Theme-aware page loading skeleton ── */
+html { background-color: hsl(210 20% 98%); }
+html.dashboard-dark { background-color: hsl(215 32% 8%); color-scheme: dark; }
+.page-skeleton { background-color: hsl(210 20% 98%); }
+.page-skeleton-panel { background-color: hsl(210 20% 95%); }
+.page-skeleton-bar {
+  background: linear-gradient(90deg, hsl(214 20% 90%) 0%, hsl(214 20% 95%) 50%, hsl(214 20% 90%) 100%);
+  background-size: 200% 100%;
+  animation: page-skeleton-shimmer 1.4s ease-in-out infinite;
+}
+.dashboard-dark .page-skeleton { background-color: hsl(215 32% 8%); }
+.dashboard-dark .page-skeleton-panel { background-color: hsl(215 30% 11%); }
+.dashboard-dark .page-skeleton-bar {
+  background: linear-gradient(90deg, hsl(215 25% 15%) 0%, hsl(215 25% 21%) 50%, hsl(215 25% 15%) 100%);
+  background-size: 200% 100%;
+}
+@keyframes page-skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }

@@ -7,3 +7,4 @@
 - [ ] Re-verify fixes end-to-end
 - [x] Lab: accept external (outside clinic) work; change case stage and urgency
 - [x] Match all dashboard pages to the public Clinexus design with light/dark appearance
+- [x] Redesign login to match the public site and standardize the current logo sitewide

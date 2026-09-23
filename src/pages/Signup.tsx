@@ -12,7 +12,7 @@ import { Eye, EyeOff, Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { clinicTypeOptions } from "@/config/clinicTypeConfig";
 import { createClinicForUser } from "@/lib/createClinic";
-import clinexusLogo from "@/assets/clinexus-logo-rect.png";
+import clinexusLogo from "@/assets/site/clinexus-logo.png";
 
 export default function Signup() {
   const [fullName, setFullName] = useState("");

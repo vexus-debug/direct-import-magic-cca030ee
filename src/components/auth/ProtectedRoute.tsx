@@ -1,8 +1,6 @@
 import { PageSkeleton } from "@/components/PageSkeleton";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;

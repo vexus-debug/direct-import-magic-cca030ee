@@ -232,6 +232,18 @@ const eyeNav: NavGroup[] = [
     ],
   },
   {
+    label: "Patient Care",
+    items: [
+      { title: "Patients", path: "patients", icon: Users },
+      { title: "Appointments", path: "appointments", icon: CalendarDays },
+      { title: "Waiting List", path: "waiting-list", icon: Clock },
+      { title: "Schedules", path: "schedules", icon: CalendarClock },
+      { title: "Prescriptions", path: "prescriptions", icon: Stethoscope },
+      { title: "Consent Forms", path: "consent-forms", icon: FileCheck },
+      { title: "Reviews", path: "reviews", icon: Star },
+    ],
+  },
+  {
     label: "Eye Clinic",
     items: [
       { title: "Eye Exams", path: "eye/exams", icon: Eye },
@@ -242,18 +254,6 @@ const eyeNav: NavGroup[] = [
       { title: "Eye Results", path: "eye/reports", icon: FileText },
       { title: "Eye Charts", path: "eye/charts", icon: Activity },
       { title: "Surgery Bookings", path: "eye/surgery", icon: Scissors },
-    ],
-  },
-  {
-    label: "Patient Care",
-    items: [
-      { title: "Patients", path: "patients", icon: Users },
-      { title: "Appointments", path: "appointments", icon: CalendarDays },
-      { title: "Waiting List", path: "waiting-list", icon: Clock },
-      { title: "Schedules", path: "schedules", icon: CalendarClock },
-      { title: "Prescriptions", path: "prescriptions", icon: Stethoscope },
-      { title: "Consent Forms", path: "consent-forms", icon: FileCheck },
-      { title: "Reviews", path: "reviews", icon: Star },
     ],
   },
   {

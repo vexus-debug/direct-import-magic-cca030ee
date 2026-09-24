@@ -18,6 +18,7 @@ import { useUnreadCount, useRealtimeNotifications } from "@/hooks/useNotificatio
 import { useUnreadMessageCount, useRealtimeMessages } from "@/hooks/useMessages";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { usePrefetchPage } from "@/lib/prefetchRoutes";
 import { isUnderMaintenance } from "@/components/MaintenanceGate";
 import {
   AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription,
@@ -33,6 +34,7 @@ export function DashboardSidebar() {
   const { currentOrg, basePath } = useOrg();
   const { data: unreadCount = 0 } = useUnreadCount();
   const { data: unreadMsgCount = 0 } = useUnreadMessageCount();
+  const prefetchPage = usePrefetchPage();
   useRealtimeNotifications();
   useRealtimeMessages();
 
@@ -75,6 +77,9 @@ export function DashboardSidebar() {
     ) : (
       <NavLink
         to={fullUrl}
+        onMouseEnter={() => prefetchPage(String(item.path))}
+        onFocus={() => prefetchPage(String(item.path))}
+        onTouchStart={() => prefetchPage(String(item.path))}
         className={cn(
           "relative flex items-center gap-3 rounded-sm px-3 py-2 text-sm transition-all duration-200 group w-full",
           active

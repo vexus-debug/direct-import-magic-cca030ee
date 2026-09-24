@@ -1,8 +1,6 @@
 import { PageSkeleton } from "@/components/PageSkeleton";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -11,8 +9,8 @@ interface ProtectedRouteProps {
 export function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { session, loading } = useAuth();
   const devPreview = typeof window !== "undefined" && window.localStorage.getItem("__devpreview") === "1";
+
   if (devPreview) return <>{children}</>;
-  const location = useLocation();
 
   if (loading) {
     return <PageSkeleton />;

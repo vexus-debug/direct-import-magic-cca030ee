@@ -151,7 +151,19 @@ import { PwaRouteGate } from "@/components/PwaRouteGate";
 import { Seo } from "@/components/Seo";
 import { AppearanceProvider } from "@/hooks/useAppearance";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Keep previously-loaded page data warm so revisiting a page is instant
+      staleTime: 2 * 60 * 1000,
+      gcTime: 10 * 60 * 1000,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      refetchOnReconnect: true,
+      retry: 1,
+    },
+  },
+});
 
 function ClinicLayout() {
   return (
